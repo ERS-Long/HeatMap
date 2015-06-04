@@ -62,9 +62,9 @@ Download folder HeatMap and HeatMap.js put them under folder widgets
 
 widgets
 
- |------HeatMap
+            |------HeatMap
  
- |------HeatMap.js
+            |------HeatMap.js
  
 
 
