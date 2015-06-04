@@ -61,8 +61,11 @@ Configuration:
 Download folder HeatMap and HeatMap.js put them under folder widgets
 
 widgets
+
  |------HeatMap
+ 
  |------HeatMap.js
+ 
 
 
 
