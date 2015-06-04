@@ -14,11 +14,9 @@ define([
     'esri/InfoTemplate',
     'dojo/_base/array',
     'dojo/dom-construct',
-    'xstyle/css!./HeatMap/css/HeatMap.css',
-    'dijit/form/HorizontalSlider',
-    'dijit/form/TextBox'
+    'xstyle/css!./HeatMap/css/HeatMap.css'
 
-], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, lang, dom, ready, on, topic, HeatMapTemplate, FeatureLayer, HeatmapRenderer, InfoTemplate, arrayUtils, domConstruct, css, HorizontalSlider, TextBox) {
+], function (declare, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, lang, dom, ready, on, topic, HeatMapTemplate, FeatureLayer, HeatmapRenderer, InfoTemplate, arrayUtils, domConstruct, css) {
 
     var heatmapFeatureLayer;
     var heatmapRenderer;
@@ -30,10 +28,6 @@ define([
 
         postCreate: function(){
             this.inherited(arguments);
-            console.log("in heatmap");
-            console.log(this.map.extent);
-
-
         //    this.map.on('extent-change', lang.hitch(this, 'initHeatMap'));
 
             this.initHeatMap(this.map);
@@ -41,8 +35,8 @@ define([
 
         initHeatMap: function (map) {
             topic.subscribe('LayerControl/heatMap', function (r) {
-                console.log(r.layer.url); //layer id
-                console.log(r.subLayer.id); //array of set visible layer ids
+        //        console.log(r.layer.url); //layer id
+        //        console.log(r.subLayer.id); //array of set visible layer ids
 
                 if (heatmapFeatureLayer)
                     map.removeLayer(heatmapFeatureLayer);
@@ -92,15 +86,9 @@ define([
                     heatmapFeatureLayer.show();
             });                                          
         },
-
-        isLayerInMap: function(map)
-        {
-
-        },
         startup: function () {
             this.inherited(arguments);
             blurCtrl = document.getElementById('blurControl');
-            console.log(blurCtrl);
 
             var sliders = document.querySelectorAll(".blurInfo p~input[type=range]");
 
